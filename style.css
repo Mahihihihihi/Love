@@ -615,23 +615,29 @@ background:rgba(255,255,255,.1);
 #finalMessage{
 
     position:fixed;
-    inset:0;
 
-    background:
-    radial-gradient(circle at top,#2b1247 0%,#12071f 60%,#07030d 100%);
+    top:0;
+    left:0;
+
+    width:100vw;
+    height:100vh;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
+    background:rgba(7,3,18,.97);
+
+    backdrop-filter:blur(12px);
+
     opacity:0;
     visibility:hidden;
 
-    transition:.5s ease;
+    transition:.45s ease;
 
-    z-index:99999;
+    z-index:999999;
 
-    padding:40px;
+    overflow:hidden;
 }
 
 #finalMessage.active{
@@ -643,8 +649,9 @@ background:rgba(255,255,255,.1);
 
 .finalContent{
 
-    max-width:760px;
-    width:100%;
+    width:min(850px,90vw);
+
+    padding:60px;
 
     text-align:center;
 
@@ -652,14 +659,13 @@ background:rgba(255,255,255,.1);
 
     border:1px solid rgba(255,255,255,.12);
 
-    border-radius:28px;
-
-    padding:60px 40px;
+    border-radius:30px;
 
     backdrop-filter:blur(20px);
 
-    box-shadow:
-        0 0 60px rgba(139,92,246,.25);
+    box-shadow:0 0 60px rgba(139,92,246,.25);
+
+    animation:finalAppear .7s ease;
 
 }
 
@@ -667,11 +673,11 @@ background:rgba(255,255,255,.1);
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:3.8rem;
+    font-size:4rem;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
-    color:#ffffff;
+    color:white;
 
 }
 
@@ -687,37 +693,30 @@ background:rgba(255,255,255,.1);
 
     color:#f2ecff;
 
-    margin-bottom:40px;
+    margin:0 auto 40px;
 
-    min-height:260px;
+    max-width:700px;
 
-}
-
-#closeFinal{
-
-    padding:16px 36px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#8b5cf6;
-
-    color:white;
-
-    font-size:1rem;
-
-    cursor:pointer;
-
-    transition:.3s;
+    text-align:center;
 
 }
 
-#closeFinal:hover{
+@keyframes finalAppear{
 
-    transform:translateY(-4px);
+    from{
 
-    box-shadow:
-        0 0 25px rgba(168,85,247,.6);
+        transform:translateY(40px) scale(.96);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0) scale(1);
+
+        opacity:1;
+
+    }
 
 }
