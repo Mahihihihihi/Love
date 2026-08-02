@@ -1,23 +1,93 @@
 <!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Happy One Year</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Happy One Year</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel='stylesheet' href='style.css'></head>
+
+<link rel='stylesheet' href='style.css'>
+
+</head>
+
 <body>
+
 <div id="aurora"></div>
 <div id="stars"></div>
 <div id="shooting-stars"></div>
 <div id="particles"></div>
-<section class='hero'><h1>A Soliloquy<br>of the Greatest<br>Year of My Life.</h1><p>For Shaira.</p><button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Begin</button></section>
-<section id='story' class='card reveal'><h2>Meri Jaan:</h2><p id="letter"></p></section>
-<section class='card reveal'><h2>Gallery</h2><div class='gallery'>
-<img src='images/photo1.JPG'><img src='images/photo2.JPG'><img src='images/photo3.jpg'>
-</div>
-  <div id="lightbox">
-    <img id="lightbox-img">
-</div>
+
+<section class='hero'>
+    <h1>A Soliloquy<br>of the Greatest<br>Year of My Life.</h1>
+    <p>For Shaira.</p>
+    <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Begin</button>
 </section>
-<section class='card reveal'><h2>Voice Note</h2><audio controls><source src='audio/message.mp3'></audio></section>
-<section class='card reveal'><h2>Future</h2><ul><li>Meeting you.</li><li>Watching sunsets.</li><li>Growing together.</li></ul></section>
-<script src='script.js'></script></body></html>
+
+<section id='story' class='card reveal'>
+    <h2>Meri Jaan:</h2>
+    <p id="letter"></p>
+</section>
+
+<section class='card reveal'>
+    <h2>Gallery</h2>
+
+    <div class='gallery'>
+        <img src='images/photo1.JPG'>
+        <img src='images/photo2.JPG'>
+        <img src='images/photo3.jpg'>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img">
+    </div>
+
+</section>
+
+<!-- NEW SECTION STARTS HERE -->
+
+<section class="card reveal">
+
+    <h2>Things You'll Never Hear Me Get Tired Of</h2>
+
+    <div class="reasons">
+
+        <div class="reason">The way you laugh.</div>
+
+        <div class="reason">Every random voice note.</div>
+
+        <div class="reason">How safe you make me feel.</div>
+
+        <div class="reason">Your smile that somehow fixes everything.</div>
+
+        <div class="reason">The way you make ordinary days unforgettable.</div>
+
+        <div class="reason">You.</div>
+
+    </div>
+
+</section>
+
+<!-- NEW SECTION ENDS HERE -->
+
+<section class='card reveal'>
+    <h2>Voice Note</h2>
+    <audio controls>
+        <source src='audio/message.mp3'>
+    </audio>
+</section>
+
+<section class='card reveal'>
+    <h2>Future</h2>
+
+    <ul>
+        <li>Meeting you.</li>
+        <li>Watching sunsets.</li>
+        <li>Growing together.</li>
+    </ul>
+
+</section>
+
+<script src='script.js'></script>
+
+</body>
+</html>
