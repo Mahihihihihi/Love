@@ -189,3 +189,75 @@ if (beginBtn && transition) {
     });
 
 }
+/* ===========================
+   FINAL LETTER
+=========================== */
+
+const finalScreen = document.getElementById("finalMessage");
+const finalLetter = document.getElementById("lastLetter");
+const lastLetterBtn = document.getElementById("lastLetterBtn");
+const closeFinal = document.getElementById("closeFinal");
+
+const ending = `If you've made it this far...
+
+Thank you.
+
+Not just for reading this.
+
+But for choosing me every day for an entire year.
+
+There were days we laughed until our stomachs hurt.
+
+There were days distance felt impossible.
+
+Yet somehow...
+
+every single day ended with me loving you a little more.
+
+Happy One Year.
+
+I'll keep choosing you.
+
+Always.`;
+
+let endingStarted = false;
+
+function typeEnding(index = 0) {
+
+    if (index < ending.length) {
+
+        finalLetter.innerHTML += ending.charAt(index);
+
+        setTimeout(() => typeEnding(index + 1), 28);
+
+    }
+
+}
+
+if (lastLetterBtn) {
+
+    lastLetterBtn.addEventListener("click", () => {
+
+        finalScreen.classList.add("active");
+
+        if (!endingStarted) {
+
+            endingStarted = true;
+
+            typeEnding();
+
+        }
+
+    });
+
+}
+
+if (closeFinal) {
+
+    closeFinal.addEventListener("click", () => {
+
+        finalScreen.classList.remove("active");
+
+    });
+
+}
