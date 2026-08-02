@@ -1,73 +1,115 @@
-document.querySelectorAll('section').forEach(s=>s.classList.add('reveal'));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.2});
-document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-/* ---------- Shooting Stars ---------- */
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, {
+    threshold: 0.18
+});
+
+reveals.forEach((section) => revealObserver.observe(section));
+
+
+/* ===========================
+   SHOOTING STARS
+=========================== */
 
 const shootingContainer = document.getElementById("shooting-stars");
 
-function createShootingStar(){
+function createShootingStar() {
 
-const star=document.createElement("div");
+    if (!shootingContainer) return;
 
-star.className="shooting-star";
+    const star = document.createElement("div");
+    star.className = "shooting-star";
 
-star.style.top=Math.random()*40+"%";
+    star.style.top = Math.random() * 40 + "%";
+    star.style.left = (70 + Math.random() * 30) + "%";
 
-star.style.left=(70+Math.random()*30)+"%";
+    shootingContainer.appendChild(star);
 
-shootingContainer.appendChild(star);
+    setTimeout(() => {
+        star.remove();
+    }, 2500);
+}
 
-setTimeout(()=>star.remove(),2500);
+setInterval(createShootingStar, 5000);
+
+
+/* ===========================
+   FLOATING PARTICLES
+=========================== */
+
+const particleContainer = document.getElementById("particles");
+
+if (particleContainer) {
+
+    for (let i = 0; i < 45; i++) {
+
+        const p = document.createElement("div");
+
+        p.className = "particle";
+
+        const size = Math.random() * 5 + 2;
+
+        p.style.width = size + "px";
+        p.style.height = size + "px";
+
+        p.style.left = Math.random() * 100 + "vw";
+
+        p.style.animationDuration = (12 + Math.random() * 12) + "s";
+        p.style.animationDelay = Math.random() * 12 + "s";
+
+        particleContainer.appendChild(p);
+
+    }
 
 }
 
-setInterval(createShootingStar,5000);
 
-/* ---------- Floating Particles ---------- */
+/* ===========================
+   GALLERY LIGHTBOX
+=========================== */
 
-const particleContainer=document.getElementById("particles");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-for(let i=0;i<45;i++){
+if (lightbox && lightboxImg) {
 
-const p=document.createElement("div");
+    document.querySelectorAll(".gallery img").forEach((img) => {
 
-p.className="particle";
+        img.addEventListener("click", () => {
 
-const size=Math.random()*5+2;
+            lightbox.classList.add("active");
+            lightboxImg.src = img.src;
 
-p.style.width=size+"px";
-p.style.height=size+"px";
+        });
 
-p.style.left=Math.random()*100+"vw";
+    });
 
-p.style.animationDuration=(12+Math.random()*12)+"s";
+    lightbox.addEventListener("click", () => {
 
-p.style.animationDelay=Math.random()*12+"s";
+        lightbox.classList.remove("active");
 
-particleContainer.appendChild(p);
+    });
 
 }
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
 
-document.querySelectorAll(".gallery img").forEach(img=>{
 
-img.onclick=()=>{
+/* ===========================
+   TYPEWRITER LETTER
+=========================== */
 
-lightbox.classList.add("active");
+const letter = document.getElementById("letter");
 
-lightboxImg.src=img.src;
-
-};
-
-});
-
-lightbox.onclick=()=>{
-
-lightbox.classList.remove("active");
-
-};
-const text=`If you're reading this, then I guess I finally finished the little surprise I've been secretly building.
+const text = `If you're reading this, then I guess I finally finished the little surprise I've been secretly building.
 
 I kept thinking there was some grand gift I was supposed to give you for one year together.
 
@@ -79,34 +121,71 @@ Happy one year.
 
 I love you.`;
 
-const letter=document.getElementById("letter");
+if (letter) {
 
-let i=0;
+    let i = 0;
+    let started = false;
 
-function typeLetter(){
+    function typeLetter() {
 
-if(i<text.length){
+        if (i < text.length) {
 
-letter.innerHTML+=text.charAt(i);
+            letter.innerHTML += text.charAt(i);
 
-i++;
+            i++;
 
-setTimeout(typeLetter,28);
+            setTimeout(typeLetter, 28);
+
+        }
+
+    }
+
+    const letterObserver = new IntersectionObserver((entries) => {
+
+        if (entries[0].isIntersecting && !started) {
+
+            started = true;
+
+            typeLetter();
+
+        }
+
+    }, {
+        threshold: 0.3
+    });
+
+    letterObserver.observe(letter);
 
 }
 
+
+/* ===========================
+   BEGIN BUTTON TRANSITION
+=========================== */
+
+const beginBtn = document.getElementById("beginBtn");
+const transition = document.getElementById("transition");
+
+if (beginBtn && transition) {
+
+    beginBtn.addEventListener("click", () => {
+
+        transition.classList.add("active");
+
+        setTimeout(() => {
+
+            document.getElementById("story").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }, 700);
+
+        setTimeout(() => {
+
+            transition.classList.remove("active");
+
+        }, 1600);
+
+    });
+
 }
-
-const observer=new IntersectionObserver(entries=>{
-
-if(entries[0].isIntersecting){
-
-typeLetter();
-
-observer.disconnect();
-
-}
-
-});
-
-observer.observe(letter);
