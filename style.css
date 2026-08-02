@@ -96,11 +96,11 @@ button{
 
 button:hover{
 
-    transform:translateY(-4px);
+  transform:translateY(-4px) scale(1.04);
 
-    background:#9f73ff;
-
-    box-shadow:0 0 70px rgba(140,90,255,.7);
+box-shadow:
+0 0 20px #8b5cf6,
+0 0 45px rgba(168,85,247,.6);
 
 }
 .card{
