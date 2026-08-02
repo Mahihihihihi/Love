@@ -1,4 +1,11 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Happy One Year</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,7 +13,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel='stylesheet' href='style.css'>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -17,33 +24,48 @@
 <div id="shooting-stars"></div>
 <div id="particles"></div>
 
-<section class='hero'>
+<section class="hero">
     <h1>A Soliloquy<br>of the Greatest<br>Year of My Life.</h1>
+
     <p>For Shaira.</p>
-    <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Begin</button>
+
+    <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
+        Begin
+    </button>
 </section>
 
-<section id='story' class='card reveal'>
+
+<section id="story" class="card reveal">
+
     <h2>Meri Jaan:</h2>
+
     <p id="letter"></p>
+
 </section>
 
-<section class='card reveal'>
+
+<section class="card reveal">
+
     <h2>Gallery</h2>
 
-    <div class='gallery'>
-        <img src='images/photo1.JPG'>
-        <img src='images/photo2.JPG'>
-        <img src='images/photo3.jpg'>
+    <div class="gallery">
+
+        <img src="images/photo1.JPG">
+
+        <img src="images/photo2.JPG">
+
+        <img src="images/photo3.jpg">
+
     </div>
 
     <div id="lightbox">
+
         <img id="lightbox-img">
+
     </div>
 
 </section>
 
-<!-- NEW SECTION STARTS HERE -->
 
 <section class="card reveal">
 
@@ -67,41 +89,74 @@
 
 </section>
 
-<!-- NEW SECTION ENDS HERE -->
-
-<section class='card reveal'>
-    <h2>Close your eyes. And listen:)</h2>
-    <audio controls>
-        <source src='audio/message.mp3'>
-    </audio>
-</section>
 
 <section class="card reveal">
 
-<h2>Before You Go.</h2>
+    <h2>Close Your Eyes. And Listen :)</h2>
 
-<p class="ending">
+    <audio controls>
 
-365 days.
+        <source src="audio/message.mp3">
 
-12 months.
-
-52 weeks.
-
-Countless laughs.
-
-Infinite miles.
-
-One home.
-
-You.
-
-</p>
-
-<button id="lastLetterBtn">
-
-One Last Thing
-
-</button>
+    </audio>
 
 </section>
+
+
+<section class="card reveal">
+
+    <h2>Before You Go...</h2>
+
+    <p class="ending">
+
+        365 Days.<br><br>
+
+        12 Months.<br><br>
+
+        52 Weeks.<br><br>
+
+        Countless Memories.<br><br>
+
+        Infinite Miles.<br><br>
+
+        One Home.<br><br>
+
+        You.
+
+    </p>
+
+    <button id="lastLetterBtn">
+
+        One Last Thing
+
+    </button>
+
+</section>
+
+
+<!-- FINAL FULLSCREEN LETTER -->
+
+<div id="finalMessage">
+
+    <div class="finalContent">
+
+        <h1>My Last Letter</h1>
+
+        <p id="lastLetter"></p>
+
+        <button id="closeFinal">
+
+            Come Back ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
