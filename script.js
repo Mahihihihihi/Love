@@ -222,27 +222,31 @@ Always.`;
 
 let endingStarted = false;
 
-function typeEnding(index = 0) {
+function typeEnding(index = 0){
 
-    if (index < ending.length) {
+    if(index < ending.length){
 
         finalLetter.innerHTML += ending.charAt(index);
 
-        setTimeout(() => typeEnding(index + 1), 28);
+        setTimeout(() => typeEnding(index + 1), 18);
 
     }
 
 }
 
-if (lastLetterBtn) {
+if(lastLetterBtn){
 
     lastLetterBtn.addEventListener("click", () => {
 
+        document.body.classList.add("modal-open");
+
         finalScreen.classList.add("active");
 
-        if (!endingStarted) {
+        if(!endingStarted){
 
             endingStarted = true;
+
+            finalLetter.innerHTML = "";
 
             typeEnding();
 
@@ -252,9 +256,11 @@ if (lastLetterBtn) {
 
 }
 
-if (closeFinal) {
+if(closeFinal){
 
     closeFinal.addEventListener("click", () => {
+
+        document.body.classList.remove("modal-open");
 
         finalScreen.classList.remove("active");
 
