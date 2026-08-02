@@ -48,9 +48,14 @@ animation:pulseGlow 4s ease-in-out infinite;
 
 h2{
 
-    font-size:2.5rem;
+    h2{
+    font-size:2.3rem;
+    margin-bottom:20px;
 
-    margin-bottom:25px;
+    color:#f4e9ff;
+
+    letter-spacing:1px;
+}
 
 }
 
@@ -98,7 +103,8 @@ box-shadow:
 0 0 20px #8b5cf6,
 0 0 45px rgba(168,85,247,.6);
 
-}.card{
+}
+.card{
     width:min(950px,90%);
     margin:60px auto;
     padding:40px;
@@ -119,6 +125,13 @@ box-shadow:
     transition:
     transform .4s ease,
     box-shadow .4s ease;
+}
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 60px rgba(139,92,246,.30),
+    0 0 35px rgba(168,85,247,.18);
 }
 .gallery{
 
