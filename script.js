@@ -67,3 +67,46 @@ lightbox.onclick=()=>{
 lightbox.classList.remove("active");
 
 };
+const text=`If you're reading this, then I guess I finally finished the little surprise I've been secretly building.
+
+I kept thinking there was some grand gift I was supposed to give you for one year together.
+
+But every time I tried, I realized that the best gift I could give you was a piece of me.
+
+So I made this.
+
+Happy one year.
+
+I love you.`;
+
+const letter=document.getElementById("letter");
+
+let i=0;
+
+function typeLetter(){
+
+if(i<text.length){
+
+letter.innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeLetter,28);
+
+}
+
+}
+
+const observer=new IntersectionObserver(entries=>{
+
+if(entries[0].isIntersecting){
+
+typeLetter();
+
+observer.disconnect();
+
+}
+
+});
+
+observer.observe(letter);
