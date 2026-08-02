@@ -47,3 +47,23 @@ p.style.animationDelay=Math.random()*12+"s";
 particleContainer.appendChild(p);
 
 }
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+
+img.onclick=()=>{
+
+lightbox.classList.add("active");
+
+lightboxImg.src=img.src;
+
+};
+
+});
+
+lightbox.onclick=()=>{
+
+lightbox.classList.remove("active");
+
+};
