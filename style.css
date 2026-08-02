@@ -42,11 +42,7 @@ section{
 
 h1{
 
-    font-size:5rem;
-
-    text-align:center;
-
-    font-weight:700;
+animation:pulseGlow 4s ease-in-out infinite;
 
 }
 
@@ -234,6 +230,17 @@ z-index:-1;
         opacity:1;
         transform:scale(1.8);
     }
+
+}
+@keyframes pulseGlow{
+
+0%,100%{
+filter:drop-shadow(0 0 10px rgba(168,85,247,.25));
+}
+
+50%{
+filter:drop-shadow(0 0 35px rgba(168,85,247,.7));
+}
 
 }
 
