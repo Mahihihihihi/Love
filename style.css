@@ -14,8 +14,11 @@ body{
 
     color:white;
 
-    background:
-    radial-gradient(circle at top,#37205d 0%,#12071f 35%,#07040d 100%);
+   background:
+radial-gradient(circle at 20% 20%, rgba(157,78,221,.35), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(99,102,241,.22), transparent 35%),
+radial-gradient(circle at 50% 90%, rgba(168,85,247,.20), transparent 45%),
+linear-gradient(180deg,#12071f,#19092b,#0b0716);
 
     overflow-x:hidden;
 
