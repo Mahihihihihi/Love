@@ -58,7 +58,6 @@ h2{
     color:#f4e9ff;
 
     letter-spacing:1px;
-}
 
 }
 
@@ -599,5 +598,126 @@ transform:translateY(-8px) scale(1.03);
 box-shadow:0 0 30px rgba(168,85,247,.35);
 
 background:rgba(255,255,255,.1);
+
+}
+/* ===========================
+   FINAL LETTER SCREEN
+=========================== */
+
+.ending{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;
+    line-height:2;
+    text-align:center;
+    color:#efe8ff;
+}
+
+#finalMessage{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#2b1247 0%,#12071f 60%,#07030d 100%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.5s ease;
+
+    z-index:99999;
+
+    padding:40px;
+}
+
+#finalMessage.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.finalContent{
+
+    max-width:760px;
+    width:100%;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:60px 40px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 60px rgba(139,92,246,.25);
+
+}
+
+.finalContent h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3.8rem;
+
+    margin-bottom:30px;
+
+    color:#ffffff;
+
+}
+
+#lastLetter{
+
+    white-space:pre-line;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.35rem;
+
+    line-height:2.1;
+
+    color:#f2ecff;
+
+    margin-bottom:40px;
+
+    min-height:260px;
+
+}
+
+#closeFinal{
+
+    padding:16px 36px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#closeFinal:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(168,85,247,.6);
 
 }
