@@ -1,0 +1,9 @@
+body{margin:0;background:#08111f;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
+#stars{position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#ffffff22 1px,transparent 2px),radial-gradient(circle at 80% 60%,#ffffff22 1px,transparent 2px),#08111f;background-size:120px 120px;animation:drift 20s linear infinite;z-index:-1}
+@keyframes drift{to{background-position:120px 120px,240px 120px,0 0}}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem}
+button{padding:12px 24px;border:none;border-radius:30px;cursor:pointer}
+.card{max-width:900px;margin:40px auto;background:#ffffff10;backdrop-filter:blur(8px);padding:24px;border-radius:20px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;border-radius:12px;cursor:pointer;transition:.3s}.gallery img:hover{transform:scale(1.03)}
+.reveal{opacity:0;transform:translateY(30px);transition:1s}.reveal.show{opacity:1;transform:none}

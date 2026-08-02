@@ -1,0 +1,1 @@
+Create images/ and audio/ folders. Add photo1.jpg etc and message.mp3. Upload to GitHub Pages.
