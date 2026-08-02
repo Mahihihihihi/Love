@@ -720,3 +720,64 @@ background:rgba(255,255,255,.1);
     }
 
 }
+.photoIntro{
+
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#d7c8ff;
+
+}
+
+.featuredPhoto{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.featuredPhoto img{
+
+    width:min(900px,95%);
+
+    border-radius:28px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 45px rgba(139,92,246,.22);
+
+    transition:.5s ease;
+
+}
+
+.featuredPhoto img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.photoCaption{
+
+    margin-top:30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.35rem;
+
+    text-align:center;
+
+    color:#efe8ff;
+
+    max-width:700px;
+
+}
