@@ -10,7 +10,7 @@ html{
 
 body{
 
-    font-family:Inter,sans-serif;
+    font-family:'Inter',sans-serif;
 
     color:white;
 
@@ -41,7 +41,11 @@ section{
 }
 
 h1{
-
+font-family:'Cormorant Garamond',serif;
+font-size:5.5rem;
+font-weight:700;
+line-height:.95;
+letter-spacing:.5px;
 animation:pulseGlow 4s ease-in-out infinite;
 
 }
@@ -525,17 +529,19 @@ opacity:0;
 
 white-space:pre-line;
 
-line-height:2;
+line-height:2.2;
 
-font-size:1.15rem;
+font-size:1.35rem;
 
 max-width:700px;
 
 margin:auto;
 
-color:#f4efff;
+color:#efe8ff;
 
-font-family:Georgia,serif;
+font-family:'Cormorant Garamond',serif;
+
+}
 
 }
 /* Scroll Reveal */
