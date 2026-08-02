@@ -216,3 +216,230 @@ transform:translateY(300px);
 }
 
 }
+/* ===========================
+   Animated Aurora
+=========================== */
+
+#aurora{
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:-4;
+}
+
+#aurora::before,
+#aurora::after{
+
+content:"";
+
+position:absolute;
+
+width:80vw;
+height:80vw;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.18;
+
+animation:auroraMove 18s ease-in-out infinite alternate;
+
+}
+
+#aurora::before{
+
+background:#7a3cff;
+
+top:-25%;
+left:-20%;
+
+}
+
+#aurora::after{
+
+background:#4b1ca8;
+
+bottom:-30%;
+right:-15%;
+
+animation-duration:24s;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+transform:translate(0,0) scale(1);
+}
+
+100%{
+transform:translate(140px,-80px) scale(1.25);
+}
+
+}
+
+/* ===========================
+   Better Stars
+=========================== */
+
+#stars{
+
+position:fixed;
+
+inset:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.22;
+
+animation:starsMove 90s linear infinite;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(220px);
+}
+
+}
+
+/* ===========================
+   Shooting Stars
+=========================== */
+
+#shooting-stars{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+.shooting-star{
+
+position:absolute;
+
+width:180px;
+
+height:2px;
+
+background:linear-gradient(90deg,white,transparent);
+
+transform:rotate(-35deg);
+
+opacity:.8;
+
+animation:shoot 2.5s linear forwards;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+transform:
+translate(0,0)
+rotate(-35deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translate(-900px,650px)
+rotate(-35deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   Floating Particles
+=========================== */
+
+#particles{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+.particle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:#d8b6ff;
+
+opacity:.35;
+
+animation:floatUp linear infinite;
+
+}
+
+@keyframes floatUp{
+
+from{
+
+transform:
+translateY(100vh);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:.35;
+
+}
+
+100%{
+
+transform:
+translateY(-120px);
+
+opacity:0;
+
+}
+
+}
+
